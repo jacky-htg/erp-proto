@@ -1,0 +1,27 @@
+{
+  "name": "erp-proto",
+  "version": "1.0.2",
+  "description": "a proto file and generate code in js for erp project",
+  "main": "index.js",
+  "scripts": {
+    "gen": "protoc --proto_path=proto proto/*/*.proto --js_out=import_style=commonjs:./pb --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./pb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacky-htg/erp-proto.git"
+  },
+  "keywords": [
+    "erp",
+    "proto"
+  ],
+  "author": "rijal.asep.nugroho@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacky-htg/erp-proto/issues"
+  },
+  "homepage": "https://github.com/jacky-htg/erp-proto#readme",
+  "dependencies": {
+    "protoc-gen-grpc-web": "^1.5.0",
+    "protoc-gen-js": "^3.21.2"
+  }
+}
