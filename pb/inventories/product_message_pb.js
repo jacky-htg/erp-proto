@@ -84,7 +84,7 @@ proto.wiradata.inventories.Product.toObject = function(includeInstance, msg) {
     productCategory: (f = msg.getProductCategory()) && inventories_product_category_message_pb.ProductCategory.toObject(includeInstance, f),
     code: jspb.Message.getFieldWithDefault(msg, 4, ""),
     name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    minimunStock: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    minimumStock: jspb.Message.getFieldWithDefault(msg, 6, 0),
     createdAt: jspb.Message.getFieldWithDefault(msg, 7, ""),
     createdBy: jspb.Message.getFieldWithDefault(msg, 8, ""),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 9, ""),
@@ -149,7 +149,7 @@ proto.wiradata.inventories.Product.deserializeBinaryFromReader = function(msg, r
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setMinimunStock(value);
+      msg.setMinimumStock(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -233,7 +233,7 @@ proto.wiradata.inventories.Product.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getMinimunStock();
+  f = message.getMinimumStock();
   if (f !== 0) {
     writer.writeUint32(
       6,
@@ -400,10 +400,10 @@ proto.wiradata.inventories.Product.prototype.setName = function(value) {
 
 
 /**
- * optional uint32 minimun_stock = 6;
+ * optional uint32 minimum_stock = 6;
  * @return {number}
  */
-proto.wiradata.inventories.Product.prototype.getMinimunStock = function() {
+proto.wiradata.inventories.Product.prototype.getMinimumStock = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -412,7 +412,7 @@ proto.wiradata.inventories.Product.prototype.getMinimunStock = function() {
  * @param {number} value
  * @return {!proto.wiradata.inventories.Product} returns this
  */
-proto.wiradata.inventories.Product.prototype.setMinimunStock = function(value) {
+proto.wiradata.inventories.Product.prototype.setMinimumStock = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
