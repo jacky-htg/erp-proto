@@ -1,6 +1,6 @@
 {
   "name": "erp-proto",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "a proto file and generate code in js for erp project",
   "main": "index.js",
   "scripts": {
