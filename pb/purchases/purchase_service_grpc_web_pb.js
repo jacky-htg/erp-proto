@@ -317,5 +317,66 @@ proto.purchases.PurchaseServicePromiseClient.prototype.purchaseList =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.purchases.Id,
+ *   !proto.purchases.OutstandingPurchaseDetails>}
+ */
+const methodDescriptor_PurchaseService_GetOutstandingPurchaseDetails = new grpc.web.MethodDescriptor(
+  '/purchases.PurchaseService/GetOutstandingPurchaseDetails',
+  grpc.web.MethodType.UNARY,
+  purchases_generic_message_pb.Id,
+  purchases_purchase_message_pb.OutstandingPurchaseDetails,
+  /**
+   * @param {!proto.purchases.Id} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  purchases_purchase_message_pb.OutstandingPurchaseDetails.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.purchases.Id} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.purchases.OutstandingPurchaseDetails)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.purchases.OutstandingPurchaseDetails>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.purchases.PurchaseServiceClient.prototype.getOutstandingPurchaseDetails =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/purchases.PurchaseService/GetOutstandingPurchaseDetails',
+      request,
+      metadata || {},
+      methodDescriptor_PurchaseService_GetOutstandingPurchaseDetails,
+      callback);
+};
+
+
+/**
+ * @param {!proto.purchases.Id} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.purchases.OutstandingPurchaseDetails>}
+ *     Promise that resolves to the response
+ */
+proto.purchases.PurchaseServicePromiseClient.prototype.getOutstandingPurchaseDetails =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/purchases.PurchaseService/GetOutstandingPurchaseDetails',
+      request,
+      metadata || {},
+      methodDescriptor_PurchaseService_GetOutstandingPurchaseDetails);
+};
+
+
 module.exports = proto.purchases;
 
