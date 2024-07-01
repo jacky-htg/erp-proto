@@ -318,5 +318,66 @@ proto.wiradata.inventories.ReceiveServicePromiseClient.prototype.list =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.wiradata.inventories.Id,
+ *   !proto.wiradata.inventories.OutstandingResponse>}
+ */
+const methodDescriptor_ReceiveService_OutstandingByPurchase = new grpc.web.MethodDescriptor(
+  '/wiradata.inventories.ReceiveService/OutstandingByPurchase',
+  grpc.web.MethodType.UNARY,
+  inventories_generic_message_pb.Id,
+  inventories_generic_message_pb.OutstandingResponse,
+  /**
+   * @param {!proto.wiradata.inventories.Id} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  inventories_generic_message_pb.OutstandingResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.wiradata.inventories.Id} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.wiradata.inventories.OutstandingResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.wiradata.inventories.OutstandingResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.wiradata.inventories.ReceiveServiceClient.prototype.outstandingByPurchase =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/wiradata.inventories.ReceiveService/OutstandingByPurchase',
+      request,
+      metadata || {},
+      methodDescriptor_ReceiveService_OutstandingByPurchase,
+      callback);
+};
+
+
+/**
+ * @param {!proto.wiradata.inventories.Id} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.wiradata.inventories.OutstandingResponse>}
+ *     Promise that resolves to the response
+ */
+proto.wiradata.inventories.ReceiveServicePromiseClient.prototype.outstandingByPurchase =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/wiradata.inventories.ReceiveService/OutstandingByPurchase',
+      request,
+      metadata || {},
+      methodDescriptor_ReceiveService_OutstandingByPurchase);
+};
+
+
 module.exports = proto.wiradata.inventories;
 

@@ -320,16 +320,16 @@ proto.purchases.PurchaseServicePromiseClient.prototype.purchaseList =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.purchases.Id,
+ *   !proto.purchases.OutstandingPurchaseRequest,
  *   !proto.purchases.OutstandingPurchaseDetails>}
  */
 const methodDescriptor_PurchaseService_GetOutstandingPurchaseDetails = new grpc.web.MethodDescriptor(
   '/purchases.PurchaseService/GetOutstandingPurchaseDetails',
   grpc.web.MethodType.UNARY,
-  purchases_generic_message_pb.Id,
+  purchases_purchase_message_pb.OutstandingPurchaseRequest,
   purchases_purchase_message_pb.OutstandingPurchaseDetails,
   /**
-   * @param {!proto.purchases.Id} request
+   * @param {!proto.purchases.OutstandingPurchaseRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -340,7 +340,7 @@ const methodDescriptor_PurchaseService_GetOutstandingPurchaseDetails = new grpc.
 
 
 /**
- * @param {!proto.purchases.Id} request The
+ * @param {!proto.purchases.OutstandingPurchaseRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -361,7 +361,7 @@ proto.purchases.PurchaseServiceClient.prototype.getOutstandingPurchaseDetails =
 
 
 /**
- * @param {!proto.purchases.Id} request The
+ * @param {!proto.purchases.OutstandingPurchaseRequest} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
