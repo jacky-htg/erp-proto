@@ -1,11 +1,14 @@
 {
   "name": "erp-proto",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "a proto file and generate code in js for erp project",
   "main": "index.js",
   "scripts": {
-    "gen": "protoc --proto_path=proto proto/*/*.proto --js_out=import_style=commonjs:./pb --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./pb"
+    "gen": "protoc --proto_path=proto proto/*/*.proto --js_out=import_style=commonjs:./js/pb --grpc-web_out=import_style=commonjs,mode=grpcwebtext:./js/pb"
   },
+  "files": [
+    "js/pb"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jacky-htg/erp-proto.git"
